@@ -1,21 +1,405 @@
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Common Begin */
+
+.text-white {
+  color: #fff !important;
+}
+
+html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+.mt-8 {
+  margin-top: 8px !important;
 }
 
-main {
-  margin: auto;
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.row::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.col {
+  float: left;
+  padding: 0 8px;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-half {
   width: 50%;
-  padding: 20px;
 }
 
-main > h1 {
+.col-third {
+  width: 33.3333%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* Common End */
+#main {}
+
+#header {
+  background-color: #000;
+  height: 46px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
+#nav,
+.subnav {
+  list-style: none;
+}
+
+#nav {
+  display: inline-block;
+}
+
+#nav li {
+  position: relative;
+}
+
+#nav>li {
+  display: inline-block;
+
+}
+
+#nav>li>a {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 24px;
+  line-height: 46px;
+}
+
+#nav li a {
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+}
+
+#nav>li:hover>a {
+  background-color: #ccc;
+  color: black;
+}
+
+#nav .subnav {
+  position: absolute;
+  background-color: #fff;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+}
+
+#nav .subnav a {
+  color: #000;
+  padding: 0 12px;
+  line-height: 38px;
+}
+
+.subnav>li:hover a {
+  background-color: #ccc;
+  color: black;
+}
+
+#nav li:hover .subnav {
+  display: block;
+}
+
+.icon-down {
+  font-size: 12px;
+}
+
+#header .mobile-menu-btn {
+  display: none;
+}
+
+#header .mobile-menu-btn,
+#header .search-btn {
+  float: right;
+}
+
+.mobile-menu-btn .icon-mobile-menu,
+.search-btn .icon-search {
+  color: #fff;
+  padding: 0 24px;
+  line-height: 46px;
+  display: block;
+}
+
+.mobile-menu-btn .icon-mobile-menu:hover,
+.search-btn .icon-search:hover {
+  background-color: #f44336;
+  cursor: pointer;
+}
+
+#header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#slider {
+  margin-top: 46px;
+  background: url('/assets/img/chicago.jpg') top center / cover no-repeat;
+  padding-top: 44%;
+  position: relative;
+
+}
+
+#slider .text-content {
+  color: #fff;
+  position: absolute;
+  bottom: 47px;
   text-align: center;
-  font-size: 3.5em;
+  width: 100%;
+}
+
+#slider .text-heading {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+#slider .text-desc {
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+#content {}
+
+#content .content-section {
+  width: 800px;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 64px 0 112px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+#content .section-heading {
+  letter-spacing: 4px;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#content .section-sub-heading {
+  text-align: center;
+  margin-top: 25px;
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+#content .about-text {
+  margin-top: 25px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+#content .member-list {
+  margin-top: 48px;
+}
+
+
+#content .member-name {
+  font-size: 15px;
+
+}
+
+#content .member-img {
+  margin-top: 15px;
+  width: 154px;
+  border-radius: 4px;
+}
+
+/* Tour Section */
+.tour-section {
+  background-color: #000;
+}
+
+.tickets-list {
+  background: #fff;
+  margin-top: 40px;
+  list-style: none;
+}
+
+.tickets-list li {
+  font-size: 15px;
+  padding: 11px 16px;
+  color: #757575;
+  border-bottom: solid 1px #ddd;
+}
+
+.tickets-list .sold-out {
+  color: #fff;
+  background-color: #f44336;
+  padding: 3px 4px;
+  margin-left: 16px;
+}
+
+.tickets-list .quantity {
+  float: right;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  margin-top: -3px;
+}
+
+
+.places-list {
+  margin-top: 32px;
+
+}
+
+
+
+.place-img {
+  width: 100%;
+  display: block;
+}
+
+.place-img:hover {
+  opacity: 0.6;
+}
+
+.place-content {
+  padding: 16px;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.place-heading {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.place-time {
+  margin-top: 15px;
+  color: #757575;
+}
+
+.place-desc {
+  margin-top: 15px;
+  line-height: 1.4;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  padding: 11px 16px;
+  display: inline-block;
+  margin-top: 15px;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* Contact */
+.contact-content {
+  margin-top: 48px;
+}
+
+.contact-info {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+  width: 30px;
+  display: inline-block;
+
+}
+
+.contact-form {
+  font-size: 15px;
+}
+
+.contact-form .form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.contact-form .form-submit {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  float: right;
+}
+
+/* Map Section */
+.map-section img {
+  width: 100%;
+}
+
+#footer {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+#footer .socials-list {
+  font-size: 24px;
+}
+
+#footer .socials-list a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+#footer .socials-list a:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copyright {
+  margin-top: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  ;
+}
+
+#footer .copyright a {
+  color: rgba(0, 0, 0, 0.6);
+  ;
 }
